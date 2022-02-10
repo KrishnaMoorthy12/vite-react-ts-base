@@ -1,0 +1,19 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"semi": "warn",
+		"arrow-body-style": ["warn", "as-needed"],
+		"arrow-parens": ["warn", "as-needed"],
+		"quotes": ["warn", "single"],
+		"react/react-in-jsx-scope": "off"
+	}
+}
