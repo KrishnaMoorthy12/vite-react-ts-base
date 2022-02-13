@@ -8,17 +8,18 @@ const theme = {
 	palette: {
 		light: {
 			accent: {
-				primary: '#1E90FF'
+				primary: '#1E90FF',
+				text: '#FFFFFF'
 			},
-			background: '#fafafa',
-			text: '#212121'
+			error: { default: '#e01818', dark: '#c90303', bg: '#ffcdd2', text: '#fff' },
+			background: { default: '#fafafa', text: '#212121' }
 		},
 		dark: {
 			accent: {
 				primary: '#1E90FF'
 			},
-			background: '#252525',
-			text: '#fafafa'
+			error: { default: '#ff4f4f', dark: '#c90303', bg: '#fd8a953b', text: '#fff' },
+			background: { default: '#252525', text: '#fafafa' }
 		}
 	}
 };
