@@ -3,7 +3,7 @@ import { ThemeType } from './ThemeEngine';
 
 export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   :root {
-    --primary-color: ${props => props.theme.palette.accent.primary};
+    --primary-color: ${props => props.theme.palette.accent.default};
     --text-color: ${props => props.theme.palette.background.text};
     --background-color: ${props => props.theme.palette.background.default};
     --font-family: ${props => props.theme.font};

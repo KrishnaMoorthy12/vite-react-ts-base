@@ -15,24 +15,12 @@ export const ButtonStyleWrapper = styled.button<{ variant: ButtonVariants; theme
 	transition: all 0.2s ease-in-out;
 	border: none;
 	outline: none;
-	background-color: ${props =>
-		props.variant === ButtonVariants.PRIMARY
-			? props.theme.palette.accent.primary
-			: props.theme.palette.error.default};
-	color: ${props =>
-		props.variant === ButtonVariants.PRIMARY
-			? props.theme.palette.accent.primary.text
-			: props.theme.palette.error.text};
+	background-color: ${props => props.theme.palette[props.variant].default};
+	color: ${props => props.theme.palette[props.variant].text};
 
 	&:hover {
-		background-color: ${props =>
-			props.variant === ButtonVariants.PRIMARY
-				? props.theme.palette.accent.primary
-				: props.theme.palette.error.dark};
+		background-color: ${props => props.theme.palette[props.variant].dark};
 	}
 `;
 
-export enum ButtonVariants {
-	PRIMARY = 'primary',
-	ERROR = 'error'
-}
+export type ButtonVariants = 'primary' | 'error';

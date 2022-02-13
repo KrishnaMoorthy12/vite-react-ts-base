@@ -6,7 +6,7 @@ export function Button({ children, variant, link, onClick, ...rest }: IButtonPro
 	onClick = link ? useHyperLink(link) : onClick;
 
 	return (
-		<ButtonStyleWrapper variant={variant ?? ButtonVariants.PRIMARY} onClick={onClick} {...rest}>
+		<ButtonStyleWrapper variant={variant ?? 'primary'} onClick={onClick} {...rest}>
 			{children}
 		</ButtonStyleWrapper>
 	);

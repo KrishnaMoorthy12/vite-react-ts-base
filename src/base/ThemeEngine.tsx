@@ -3,20 +3,23 @@ import { ThemeProvider } from 'styled-components';
 
 const PREFERS_DARK_SCHEME = '(prefers-color-scheme: dark)';
 
-const theme = {
+export const themeProperties = {
 	font: 'Metropolis',
 	palette: {
 		light: {
 			accent: {
-				primary: '#1E90FF',
-				text: '#FFFFFF'
+				default: '#1E90FF',
+				text: '#FFFFFF',
+				dark: '#187bdd'
 			},
 			error: { default: '#e01818', dark: '#c90303', bg: '#ffcdd2', text: '#fff' },
 			background: { default: '#fafafa', text: '#212121' }
 		},
 		dark: {
 			accent: {
-				primary: '#1E90FF'
+				default: '#1E90FF',
+				text: '#FFFFFF',
+				dark: '#187bdd'
 			},
 			error: { default: '#ff4f4f', dark: '#c90303', bg: '#fd8a953b', text: '#fff' },
 			background: { default: '#252525', text: '#fafafa' }
@@ -25,9 +28,9 @@ const theme = {
 };
 
 const getThemeProps = (scheme: ColorScheme) => ({
-	...theme,
+	...themeProperties,
 	mode: scheme,
-	palette: theme.palette[scheme]
+	palette: themeProperties.palette[scheme]
 });
 
 export type ThemeType = ReturnType<typeof getThemeProps>;
