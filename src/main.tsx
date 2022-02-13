@@ -6,14 +6,18 @@ import { GlobalStyles } from './base/GlobalStyles';
 import { ThemeEngine } from './base/ThemeEngine';
 import { UnexpectedError } from './views/Errors';
 
+/**
+ *? NOTE: Error Boundary does not catch errors from Theme Engine
+ */
+
 ReactDOM.render(
 	<React.StrictMode>
-		<ErrorBoundary FallbackComponent={UnexpectedError}>
-			<ThemeEngine>
-				<GlobalStyles />
+		<ThemeEngine>
+			<GlobalStyles />
+			<ErrorBoundary FallbackComponent={UnexpectedError}>
 				<Router />
-			</ThemeEngine>
-		</ErrorBoundary>
+			</ErrorBoundary>
+		</ThemeEngine>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
