@@ -7,7 +7,7 @@ export function UnexpectedError({ error, resetErrorBoundary }: FallbackProps) {
 		<ErrorBoundaryStyleWrapper>
 			<h1 className='heading'>Something went wrong:</h1>
 			<pre className='error-stack'>{error.stack}</pre>
-			<Button variant={'error'} onClick={resetErrorBoundary}>
+			<Button variant='error' onClick={resetErrorBoundary}>
 				Try again
 			</Button>
 		</ErrorBoundaryStyleWrapper>
