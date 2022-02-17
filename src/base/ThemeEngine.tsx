@@ -3,11 +3,25 @@ import { ThemeProvider } from 'styled-components';
 
 const PREFERS_DARK_SCHEME = '(prefers-color-scheme: dark)';
 
+export interface ITheme {
+	font: string;
+	mode: ColorScheme;
+	palette: {
+		primary: {
+			default: string;
+			text: string;
+			dark: string;
+		};
+		error: { default: string; dark: string; bg: string; text: string };
+		background: { default: string; text: string };
+	};
+}
+
 export const themeProperties = {
 	font: 'Metropolis',
 	palette: {
 		light: {
-			accent: {
+			primary: {
 				default: '#1E90FF',
 				text: '#FFFFFF',
 				dark: '#187bdd'
@@ -16,7 +30,7 @@ export const themeProperties = {
 			background: { default: '#fafafa', text: '#212121' }
 		},
 		dark: {
-			accent: {
+			primary: {
 				default: '#1E90FF',
 				text: '#FFFFFF',
 				dark: '#187bdd'
@@ -27,7 +41,7 @@ export const themeProperties = {
 	}
 };
 
-const getThemeProps = (scheme: ColorScheme) => ({
+const getThemeProps = (scheme: ColorScheme): ITheme => ({
 	...themeProperties,
 	mode: scheme,
 	palette: themeProperties.palette[scheme]

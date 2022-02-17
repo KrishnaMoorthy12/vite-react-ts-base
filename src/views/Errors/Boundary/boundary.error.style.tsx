@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { ThemeType } from '../../../base/ThemeEngine';
 
-export const ErrorBoundaryStyleWrapper = styled.main<{ theme: ThemeType }>`
+export const ErrorBoundaryStyleWrapper = styled.main`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -11,7 +10,7 @@ export const ErrorBoundaryStyleWrapper = styled.main<{ theme: ThemeType }>`
 	.heading {
 		font-size: 3rem;
 		text-align: center;
-		color: ${props => (props.theme as ThemeType).palette.error.default};
+		color: ${props => props.theme.palette.error.default};
 		margin-bottom: 1em;
 	}
 
@@ -22,7 +21,7 @@ export const ErrorBoundaryStyleWrapper = styled.main<{ theme: ThemeType }>`
 		max-height: 70vh;
 		overflow: auto;
 		padding: 1.5rem;
-		background-color: ${props => (props.theme as ThemeType).palette.error.bg};
+		background-color: ${props => props.theme.palette.error.bg};
 		border-radius: 1rem;
 		margin-bottom: 2em;
 	}

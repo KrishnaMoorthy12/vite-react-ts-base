@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import { ThemeType } from './ThemeEngine';
 
-export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
+export const GlobalStyles = createGlobalStyle`
   :root {
-    --primary-color: ${props => props.theme.palette.accent.default};
+    --primary-color: ${props => props.theme.palette.primary.default};
     --text-color: ${props => props.theme.palette.background.text};
     --background-color: ${props => props.theme.palette.background.default};
     --font-family: ${props => props.theme.font};

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { ThemeType } from '../../../base/ThemeEngine';
 
-export const ButtonStyleWrapper = styled.button<{ variant: ButtonVariants; theme: ThemeType }>`
+export const ButtonStyleWrapper = styled.button<{ variant: ButtonVariants }>`
 	display: inline-flex;
 	font-family: inherit;
 	font-size: 1.8rem;
